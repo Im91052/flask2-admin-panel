@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>Linktree</title></head>
+<body>
+<h1>{{ settings[1] if settings else "Welcome" }}</h1>
+<p>{{ settings[2] if settings else "No bio set" }}</p>
+{% if settings and settings[0] %}
+<img src="{{ url_for('static', filename=settings[0].split('static/')[-1]) }}" height="100">
+{% endif %}
+</body>
+</html>
